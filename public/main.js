@@ -5,7 +5,7 @@ let lastSec = 60;
 let updateTime = setInterval(() => {
   const time = end - new Date().getTime();
 
-  document.getElementById("ms").innerHTML = Math.floor(time % 1000) + "ms";
+  // document.getElementById("ms").innerHTML = Math.floor(time % 1000) + "ms";
 
   const sec = Math.floor((time % 60000) / 1000);
   if (sec !== lastSec) {
@@ -25,4 +25,4 @@ let updateTime = setInterval(() => {
     document.getElementById("time-left").innerHTML = "Time Expired!";
     clearInterval(updateTime);
   }
-}, 1);
+}, 500);
