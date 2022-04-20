@@ -1,0 +1,150 @@
+:root {
+  --transition-size: 0.5s;
+  --transition-shadow: 0.5s;
+}
+
+body,
+html {
+  font-family: "Fira Code";
+  color: white;
+  margin: 0;
+  padding: 0;
+  background-image: url("../background.jpg");
+  background-position: center top 45%;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+}
+
+/* Position text in the top-left corner */
+#header {
+  font-size: calc(3vh + 0.5vw);
+  margin: 0;
+  position: absolute;
+  top: 0.5em;
+  left: 0.5em;
+  text-shadow: 0 0 1em black;
+  -webkit-transition: text-shadow calc(var(--transition-shadow)/2) cubic-bezier(0.6, 0.04, 0.98, 0.34);
+  transition: text-shadow calc(var(--transition-shadow)/2) cubic-bezier(0.6, 0.04, 0.98, 0.34);
+}
+
+#header:hover {
+  text-shadow: 0 0 0.4em black;
+  -webkit-transition: text-shadow var(--transition-shadow) cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  transition: text-shadow var(--transition-shadow) cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+#center {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 93vh;
+      grid-template-rows: 93vh;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#center #main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#center #main #title {
+  font-size: 6vh;
+  text-transform: uppercase;
+  margin: 3vh 0;
+  -webkit-transition: font-size var(--transition-size) ease-in-out;
+  transition: font-size var(--transition-size) ease-in-out;
+  text-shadow: 0 0 1em black;
+  -webkit-transition: text-shadow calc(var(--transition-shadow)/2) cubic-bezier(0.6, 0.04, 0.98, 0.34);
+  transition: text-shadow calc(var(--transition-shadow)/2) cubic-bezier(0.6, 0.04, 0.98, 0.34);
+  -webkit-transition: font-size var(--transition-size) ease-in-out, text-shadow calc(var(--transition-shadow)/2) cubic-bezier(0.6, 0.04, 0.98, 0.34);
+  transition: font-size var(--transition-size) ease-in-out, text-shadow calc(var(--transition-shadow)/2) cubic-bezier(0.6, 0.04, 0.98, 0.34);
+}
+
+#center #main #title:hover {
+  text-shadow: 0 0 0.4em black;
+  -webkit-transition: text-shadow var(--transition-shadow) cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  transition: text-shadow var(--transition-shadow) cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+#center #main #time {
+  display: -ms-grid;
+  display: grid;
+  text-align: center;
+}
+
+#center #main #time hr {
+  background-color: white;
+  opacity: 0.5;
+  width: 100%;
+  height: 0.1vh;
+  min-height: 1px;
+  max-height: 1px;
+  margin: 2vh 0;
+  border: none;
+  border-radius: 1em;
+  -webkit-box-shadow: 0 0 1em 0.1em black;
+          box-shadow: 0 0 1em 0.1em black;
+  -webkit-transition: -webkit-box-shadow var(--transition-shadow);
+  transition: -webkit-box-shadow var(--transition-shadow);
+  transition: box-shadow var(--transition-shadow);
+  transition: box-shadow var(--transition-shadow), -webkit-box-shadow var(--transition-shadow);
+}
+
+#center #main #time #time-left {
+  font-size: 3vh;
+  margin: 4vh 0;
+  -webkit-transition: font-size var(--transition-size) ease-in-out;
+  transition: font-size var(--transition-size) ease-in-out;
+  text-shadow: 0 0 1em black;
+  -webkit-transition: text-shadow calc(var(--transition-shadow)/2) cubic-bezier(0.6, 0.04, 0.98, 0.34);
+  transition: text-shadow calc(var(--transition-shadow)/2) cubic-bezier(0.6, 0.04, 0.98, 0.34);
+  -webkit-transition: font-size var(--transition-size) ease-in-out, text-shadow calc(var(--transition-shadow)/2) cubic-bezier(0.6, 0.04, 0.98, 0.34);
+  transition: font-size var(--transition-size) ease-in-out, text-shadow calc(var(--transition-shadow)/2) cubic-bezier(0.6, 0.04, 0.98, 0.34);
+}
+
+#center #main #time #time-left:hover {
+  text-shadow: 0 0 0.4em black;
+  -webkit-transition: text-shadow var(--transition-shadow) cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  transition: text-shadow var(--transition-shadow) cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+#center #main #time #ms {
+  font-size: 2vh;
+  width: 3em;
+  text-align: right;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  margin: 0;
+  text-shadow: 0 0 1em black;
+  -webkit-transition: text-shadow calc(var(--transition-shadow)/2) cubic-bezier(0.6, 0.04, 0.98, 0.34);
+  transition: text-shadow calc(var(--transition-shadow)/2) cubic-bezier(0.6, 0.04, 0.98, 0.34);
+  -webkit-transition: font-size var(--transition-size) ease-in-out, text-shadow calc(var(--transition-shadow)/2) cubic-bezier(0.6, 0.04, 0.98, 0.34);
+  transition: font-size var(--transition-size) ease-in-out, text-shadow calc(var(--transition-shadow)/2) cubic-bezier(0.6, 0.04, 0.98, 0.34);
+}
+
+#center #main #time #ms:hover {
+  text-shadow: 0 0 0.4em black;
+  -webkit-transition: text-shadow var(--transition-shadow) cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  transition: text-shadow var(--transition-shadow) cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+#bottom {
+  font-size: calc(1.2vh + 0.2vw);
+  position: absolute;
+  bottom: 0;
+  left: 1em;
+  text-shadow: 0 0 0.5em black;
+  -webkit-transition: text-shadow 1s;
+  transition: text-shadow 1s;
+}
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,132 @@
+:root {
+  --transition-size: 0.5s;
+  --transition-shadow: 0.5s;
+}
+
+@mixin text-shadow {
+  text-shadow: 0 0 1em black;
+
+  transition:
+    text-shadow calc(var(--transition-shadow)/2) cubic-bezier(.6, .04, .98, .34); //, margin 0.5s;
+
+  &:hover {
+    text-shadow: 0 0 0.4em black;
+    transition:
+      text-shadow var(--transition-shadow) cubic-bezier(.68, -0.55, .27, 1.55);
+  }
+}
+
+@mixin text-shadow-size {
+  @include text-shadow();
+
+  transition:
+    font-size var(--transition-size) ease-in-out,
+    text-shadow calc(var(--transition-shadow)/2) cubic-bezier(.6, .04, .98, .34); //, margin 0.5s;
+}
+
+body,
+html {
+  font-family: "Fira Code";
+  color: white;
+
+  margin: 0;
+  padding: 0;
+
+  background-image: url("../background.jpg");
+  background-position: center top 45%;
+  background-size: cover;
+
+  width: 100vw;
+  height: 100vh;
+}
+
+/* Position text in the top-left corner */
+#header {
+  font-size: calc(3vh + 0.5vw);
+
+  margin: 0;
+
+  position: absolute;
+  top: 0.5em;
+  left: 0.5em;
+
+  @include text-shadow();
+}
+
+#center {
+  display: grid;
+  grid-template-rows: 93vh;
+  align-items: center;
+
+  #main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    #title {
+      font-size: 6vh;
+      text-transform: uppercase;
+
+      margin: 3vh 0;
+
+      transition: font-size var(--transition-size) ease-in-out;
+
+      @include text-shadow-size();
+    }
+
+    #time {
+      display: grid;
+      text-align: center;
+
+      hr {
+        background-color: white;
+        opacity: 0.5;
+
+        width: 100%;
+        height: 0.1vh;
+        min-height: 1px;
+        max-height: 1px;
+        margin: 2vh 0;
+
+        border: none;
+        border-radius: 1em;
+
+        box-shadow: 0 0 1em 0.1em black;
+
+        transition: box-shadow var(--transition-shadow);
+      }
+
+      #time-left {
+        font-size: 3vh;
+        margin: 4vh 0;
+
+        transition: font-size var(--transition-size) ease-in-out;
+
+        @include text-shadow-size();
+      }
+
+      #ms {
+        font-size: 2vh;
+        width: 3em;
+
+        text-align: right;
+        justify-self: center;
+
+        margin: 0;
+
+        @include text-shadow-size();
+      }
+    }
+  }
+}
+
+#bottom {
+  font-size: calc(1.2vh + 0.2vw);
+
+  position: absolute;
+  bottom: 0;
+  left: 1em;
+
+  text-shadow: 0 0 0.5em black;
+  transition: text-shadow 1s;
+}
