@@ -1,8 +1,8 @@
-const end = new Date("Jan 1, 2023").getTime();
+const end = new Date("Jan 1, 2024").getTime();
 
 let lastSec = 60;
 
-let updateTime = setInterval(() => {
+const updateTime = setInterval(() => {
   const time = end - new Date().getTime();
 
   // document.getElementById("ms").innerHTML = Math.floor(time % 1000) + "ms";
@@ -25,4 +25,4 @@ let updateTime = setInterval(() => {
     document.getElementById("time-left").innerHTML = "Time Expired!";
     clearInterval(updateTime);
   }
-}, 500);
+}, 100);
